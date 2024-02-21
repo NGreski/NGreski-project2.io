@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The First Obstacle</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        #submitButton {
+            color: white;
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
     <section class="container">
@@ -17,9 +23,31 @@
                 <input type="text" id="riddle1" name="riddle1">
                 
                 <input type="submit" id="submitButton" value="Submit Answer">
+                <p>
+                    Think carefully, for the correct answer will allow you passage.
+                </p>
         </form>
     </section>
     <script>
+
+        const answerInput = document.getElementById('riddle1');
+        const submitButton = document.getElementById('submitButton');
+
+    function updateButton(correctAnswer, userAnswer) {
+        if (correctAnswer !== userAnswer) {
+            submitButton.style.color = 'white';
+            submitButton.style.backgroundColor = 'red';
+        } else {
+            submitButton.style.color = 'white';
+            submitButton.style.backgroundColor = 'green';
+        }
+    }
+
+    answerInput.addEventListener('input', function () {
+        const correctAnswer = 'echo';
+        const userAnswer = answerInput.value
+        updateButton(correctAnswer, userAnswer);
+    });
 
     </script>
 </body>
