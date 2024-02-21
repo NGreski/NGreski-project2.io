@@ -25,5 +25,31 @@
 
         <p>Your choice will not only test your abilities but also reveal deeper truths about your character.</p>
     </section>
+
+    <script>
+        const pathForm = document.getElementById("pathForm");
+        const pathChoice = document.getElementById("pathChoice");
+
+        pathForm.addEventListener("click", function(event){
+            if(pathChoice.value === 'strength'){
+                document.body.style.backgroundColor = "pink";
+            }
+            if(pathChoice.value === "wisdom"){
+                document.body.style.backgroundColor = "lightblue";
+            }
+            if(pathChoice.value === "stealth"){
+                document.body.style.backgroundColor = "lightgreen";
+                
+            }
+        });
+
+        pathForm.addEventListener("submit", function(event){
+            if(pathChoice.value === "stealth"){
+                event.preventDefault();
+                window.location.href = "page5b.html";
+            }
+        });
+    
+    </script>
 </body>
 </html>
