@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Quest for the Crystal of Wisdom</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <section class="container">
+        <form id = "conclusionForm" type = "get" action = "welcome.html">
+
+        
+        <h1>Your Quest Has Concluded</h1>
+        <p id = "conclusion">Based on your choices, [Insert a dynamic conclusion based on the user's journey and final decision]. The kingdom will remember your deeds for generations to come.</p>
+        <p>We hope you enjoyed your adventure. Would you like to provide feedback on your experience?</p>
+        
+        <label>
+            Your Feedback:
+        </label>
+        <textarea rows = 5 cols = 50 placeholder="Enter your feedback here..."></textarea>
+
+        <input type = "submit" value = "Submit Feedback">
+    </br>
+        <input type  ="submit" value = "Play Again">
+    </form>
+    <p>
+        I am going to sincerely thank my family. 
+        My parents and my brother have supported me through everything that has gone on in my life through that good and the bad. I will continue to always support them as well no matter what.
+    </p>
+    </section>
+
+    <script>
+        const characterChoice = localStorage.getItem('characterChoice') || '';
+
+        let conclusionMessage = "Based on your choices, [message] the kingdom will remember your deeds for generations to come.";
+
+        if (characterChoice === 'Aria, the Warrior') {
+            conclusionMessage = "Based on your choices, you, as a great WARRIOR, you have brought peace to the kingdom. The kingdom will remember your deeds for generations to come.";
+        } else if (characterChoice === 'Tara, the Rogue') {
+            conclusionMessage = "Based on your choices, as a great ROUGE, you have brought peace to the kingdom. The kingdom will remember your deeds for generations to come.";
+        } else if (characterChoice === 'Eldrin, the Mage') {
+            conclusionMessage = "Based on your choices, as a great MAGE, you have brought peace to the kingdom. The kingdom will remember your deeds for generations to come.";
+        }
+
+        document.getElementById('conclusion').textContent = conclusionMessage;
+    </script>
+</body>
+</html>

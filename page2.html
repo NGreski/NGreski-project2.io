@@ -9,7 +9,7 @@
 </head>
 <body>
     <section class="container">
-        <form id = "characterForm" type = "get" action = "page3.html">
+        <form id = "characterForm" onsubmit="saveCharacterChoice(); return true;" action = "page3.html">
             <h1>Choose Your Character</h1>
                 <fieldset>
                     <legend>
@@ -39,6 +39,11 @@
                 <input type = "submit" value = "Continue">
            </form>
     </section>
-    
+    <script>
+        function saveCharacterChoice() {
+            const selectedCharacter = document.querySelector('input[name="character"]:checked').value;
+            localStorage.setItem('characterChoice', selectedCharacter);
+        }
+    </script>
 </body>
 </html>
